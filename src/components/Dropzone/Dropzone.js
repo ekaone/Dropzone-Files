@@ -81,17 +81,25 @@ export default function Dropzone() {
 
   return (
     <>
-      <section className="container">
+      <section>
         <div {...getRootProps({ className: "dropzone" })}>
-          <input {...getInputProps()} />
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <aside style={{ backgroundColor: "yellow" }}>
+            <input {...getInputProps()} />
+            <p>Drag 'n' drop some files here, or click to select files</p>
+          </aside>
         </div>
-        <aside style={thumbsContainer}>{thumbs}</aside>
       </section>
-      <br />
-      <button onClick={() => setFiles([])}>Delete Images</button>
-      <br />
-      <pre>{JSON.stringify(files, null, 2)}</pre>
+      <section>
+        <aside style={thumbsContainer}>{thumbs}</aside>
+        <aside>
+          <button onClick={() => setFiles([])}>Delete Images</button>
+        </aside>
+        <aside>
+          <pre>
+            {files.length !== 0 ? JSON.stringify(files, null, 2) : "JSON"}
+          </pre>
+        </aside>
+      </section>
     </>
   );
 }
