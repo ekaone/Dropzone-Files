@@ -1,6 +1,16 @@
 ## Dropzone Files
 
-Simple Drag and Drop files images
+Simple Drag and Drop files images*
+
+More details 🚀 [react-dropzone](https://github.com/react-dropzone/react-dropzone) 
+
+## Screenshot
+
+<p align="center">
+  <a href="https://ekaone.github.io/Dropzone-Files/">
+    <img src="./src/assets/banner.png" alt="Dropzone-Files" />
+  </a>
+</p>
 
 ## Author
 

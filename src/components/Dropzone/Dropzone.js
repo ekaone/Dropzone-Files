@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 
 export default function Dropzone() {
@@ -85,21 +85,28 @@ export default function Dropzone() {
         <div {...getRootProps({ className: "dropzone" })}>
           <aside style={{ backgroundColor: "yellow" }}>
             <input {...getInputProps()} />
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <p>
+              Drag 'n' drop some files here, or <u>click</u> to select files
+            </p>
           </aside>
         </div>
       </section>
       <section>
-        <aside style={thumbsContainer}>{thumbs}</aside>
-        <aside>
-          <button onClick={() => setFiles([])}>Delete Images</button>
+        <aside style={thumbsContainer}>
+          <h4>Click image to removed</h4>
+          <br />
+          {thumbs}
         </aside>
         <aside>
-          <pre>
-            {files.length !== 0 ? JSON.stringify(files, null, 2) : "JSON"}
-          </pre>
+          <button onClick={() => setFiles([])}>Delete all Images</button>
         </aside>
       </section>
+      <hr />
+      <header>
+        <section>
+          <pre>{JSON.stringify(files, null, 4)}</pre>
+        </section>
+      </header>
     </>
   );
 }
